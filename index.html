@@ -16,39 +16,23 @@
         justify-content: flex-start;
         color: #fff;
         text-align: center;
-        background: linear-gradient(120deg, #FF6600 0%, #FF8C00 40%, #000000 100%);
         position: relative;
-        overflow: hidden;
         padding-top: 20px;
+        /* Háttér két részre osztva, áttetsző színek */
+        background: linear-gradient(to right, rgba(255,153,0,0.2) 50%, rgba(0,0,0,0.2) 50%);
     }
 
-    /* Nagy áttetsző logó a háttérben */
-    .background-logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 300px;
-        height: 300px;
-        background: url('logo-hatter.png') no-repeat center center;
-        background-size: contain;
-        opacity: 0.05;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-    }
-
-    /* Felül középre logó */
+    /* Logó felül középen */
     .top-logo {
         width: 120px;
         height: auto;
         margin-bottom: 20px;
-        z-index: 2;
     }
 
     h1 {
         margin-bottom: 35px;
         font-size: 2em;
         text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-        z-index: 2;
     }
 
     .button-container {
@@ -57,7 +41,6 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-        z-index: 2;
     }
 
     .social-button {
@@ -77,6 +60,7 @@
 
     .social-button i { font-size: 28px; }
 
+    /* finom fényhatás gombokra */
     .social-button::before {
         content: '';
         position: absolute;
@@ -110,9 +94,7 @@
 </head>
 <body>
 
-<div class="background-logo"></div>
-
-<img src="logo-hatter.png" alt="Egyesület logó" class="top-logo">
+<img src=IMG_5495.png" alt="Egyesület logó" class="top-logo">
 
 <h1>Csatlakozz hozzánk!</h1>
 
