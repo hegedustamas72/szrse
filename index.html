@@ -6,114 +6,114 @@
 <title>Szeged Volley Kapcsolatok</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-    html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-    }
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        color: #fff;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        position: relative;
-    }
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding-top: 20px;
+    overflow: hidden;
+}
 
-    /* Két oldal: bal narancs, jobb fekete (nem átmenet, hanem éles határ) */
-    .bg-left,
-    .bg-right {
-        position: fixed;
-        top: 0;
-        width: 50%;
-        height: 100%;
-        z-index: -2;
-    }
-    .bg-left { background: #FF6600; }
-    .bg-right { right: 0; background: #000000; }
+/* Háttér: bal narancs, jobb fekete, sportos textúra */
+.bg-left,
+.bg-right {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -2;
+    background-size: 200% 200%;
+    animation: movePattern 10s linear infinite;
+}
+.bg-left { left: 0; background-color: #FF6600; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px); }
+.bg-right { right: 0; background-color: #000000; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px); }
 
-    /* Finom overlay, hogy ne legyen túlságosan agresszív a két szín */
-    .overlay-left,
-    .overlay-right {
-        position: fixed;
-        top: 0;
-        width: 50%;
-        height: 100%;
-        z-index: -1;
-    }
-    .overlay-left { left: 0; background: rgba(255,102,0,0.4); }
-    .overlay-right { right: 0; background: rgba(0,0,0,0.4); }
+/* Finom animáció */
+@keyframes movePattern {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
+}
 
-    .top-logo {
-        width: 130px;
-        margin-top: 18px;
-        margin-bottom: 22px;
-    }
+/* Logó felül középen */
+.top-logo {
+    width: 130px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+    z-index: 1;
+    position: relative;
+}
 
-    h1 {
-        font-size: 2em;
-        margin-bottom: 30px;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
+h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 1;
+}
 
-    .button-container {
-        width: 90%;
-        max-width: 420px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+.button-container {
+    width: 90%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 1;
+    position: relative;
+}
 
-    .social-button {
-        font-size: 20px;
-        padding: 18px;
-        border-radius: 14px;
-        text-decoration: none;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        position: relative;
-        overflow: hidden;
-        transition: transform .25s, box-shadow .25s;
-    }
+.social-button {
+    font-size: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s;
+    border: 2px solid rgba(255,255,255,0.7); /* világos keret */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* finom árnyék */
+}
 
-    .social-button i { font-size: 26px; }
+/* Platform színek */
+.social-button i { font-size: 26px; }
+.facebook { background-color: rgba(59,89,152,0.9); }
+.instagram { background-color: rgba(225,48,108,0.9); }
+.tiktok { background-color: rgba(105,201,208,0.9); color: #000; }
+.weboldal { background-color: rgba(0,0,0,0.8); }
 
-    .social-button:hover {
-        transform: scale(1.08);
-        box-shadow: 0 8px 28px rgba(0,0,0,0.4);
-    }
+.social-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 28px rgba(255,255,255,0.4);
+}
 
-    /* Platform színek */
-    .facebook { background: #3b5998; }
-    .instagram { background: #E1306C; }
-    .tiktok { background: #69C9D0; color: #000; }
-    .weboldal { background: #000; }
-
-    @media (max-width: 400px) {
-        .social-button { font-size: 18px; padding: 16px; }
-        .social-button i { font-size: 22px; }
-        .top-logo { width: 110px; }
-    }
+@media (max-width: 400px) {
+    .social-button { font-size: 18px; padding: 16px; }
+    .social-button i { font-size: 22px; }
+    .top-logo { width: 110px; }
+}
 </style>
 </head>
 <body>
 
-<!-- Két háttérszín -->
 <div class="bg-left"></div>
 <div class="bg-right"></div>
 
-<!-- Lágy overlay a két háttérre -->
-<div class="overlay-left"></div>
-<div class="overlay-right"></div>
-
-<!-- Logó felül középen -->
 <img src="IMG_0053.jpeg" alt="Szeged Volley logó" class="top-logo">
 
 <h1>Csatlakozz hozzánk!</h1>
