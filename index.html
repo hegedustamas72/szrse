@@ -6,7 +6,6 @@
 <title>Sportegyesület Kapcsolatok</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-    /* Alap body beállítások */
     body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -14,101 +13,123 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         color: #fff;
         text-align: center;
-        background: linear-gradient(135deg, #000000, #FF9900);
+        background: linear-gradient(120deg, #FF6600 0%, #FF8C00 40%, #000000 100%);
+        position: relative;
+        overflow: hidden;
+        padding-top: 20px;
+    }
+
+    /* Nagy áttetsző logó a háttérben */
+    .background-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        background: url('logo-hatter.png') no-repeat center center;
+        background-size: contain;
+        opacity: 0.05;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+
+    /* Felül középre logó */
+    .top-logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+        z-index: 2;
     }
 
     h1 {
-        margin-bottom: 40px;
+        margin-bottom: 35px;
         font-size: 2em;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        z-index: 2;
     }
 
-    /* Gombok teljes szélességűek, mobil optimalizáltak */
     .button-container {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
         width: 90%;
         max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        z-index: 2;
     }
 
     .social-button {
+        font-size: 20px;
+        padding: 18px;
+        border-radius: 14px;
+        text-decoration: none;
+        color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 15px;
-        padding: 18px;
-        font-size: 20px;
-        text-decoration: none;
-        border-radius: 15px;
-        transition: all 0.3s ease;
-        color: #fff;
+        gap: 14px;
         position: relative;
         overflow: hidden;
+        transition: transform .3s, box-shadow .3s;
     }
 
-    .social-button i {
-        font-size: 26px;
-    }
+    .social-button i { font-size: 28px; }
 
-    /* Hover effektek - finom fénylő animáció */
     .social-button::before {
         content: '';
         position: absolute;
-        top: 0; left: -100%;
-        width: 100%;
+        top: 0; left: -120%;
+        width: 120%;
         height: 100%;
-        background: rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.15);
         transform: skewX(-20deg);
-        transition: all 0.5s ease;
+        transition: left .6s ease;
     }
-
     .social-button:hover::before {
         left: 100%;
     }
-
     .social-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        transform: scale(1.06);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.4);
     }
 
     /* Platform színek */
     .facebook { background: #3b5998; }
     .instagram { background: #E1306C; }
     .tiktok { background: #69C9D0; color: #000; }
-    .weboldal { background: #FF9900; color: #000; }
+    .weboldal { background: #000; }
 
-    /* Mobil optimalizálás - nagyobb gombok kisebb képernyőn */
     @media (max-width: 400px) {
-        .social-button {
-            font-size: 18px;
-            padding: 16px;
-        }
-
-        .social-button i {
-            font-size: 22px;
-        }
+        .social-button { font-size: 18px; padding: 16px; }
+        .social-button i { font-size: 22px; }
+        .top-logo { width: 100px; }
     }
 </style>
 </head>
 <body>
+
+<div class="background-logo"></div>
+
+<img src="logo-hatter.png" alt="Egyesület logó" class="top-logo">
+
 <h1>Csatlakozz hozzánk!</h1>
+
 <div class="button-container">
-    <a href="https://www.facebook.com/szegedirse" class="social-button facebook" target="_blank">
+    <a href="https://www.facebook.com/egyesulet" class="social-button facebook" target="_blank">
         <i class="fab fa-facebook-f"></i> Facebook
     </a>
-    <a href="https://www.instagram.com/szegedirse" class="social-button instagram" target="_blank">
+    <a href="https://www.instagram.com/egyesulet" class="social-button instagram" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
     </a>
     <a href="https://www.tiktok.com/@egyesulet" class="social-button tiktok" target="_blank">
         <i class="fab fa-tiktok"></i> TikTok
     </a>
-    <a href="https://www.szegedvolley.com" class="social-button weboldal" target="_blank">
+    <a href="https://www.egyesulet.hu" class="social-button weboldal" target="_blank">
         <i class="fas fa-globe"></i> Weboldal
     </a>
 </div>
+
 </body>
 </html>
