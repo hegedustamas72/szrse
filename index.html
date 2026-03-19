@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Szeged Volley Kapcsolatok</title>
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
 <style>
 html, body {
     margin: 0;
@@ -14,8 +16,6 @@ html, body {
 }
 
 body {
-    <div class="background"></div>
-    <div class="overlay"></div>
     font-family: Arial, sans-serif;
     color: #fff;
     text-align: center;
@@ -23,7 +23,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    position: relative;
     padding-top: 20px;
     overflow: hidden;
 }
@@ -35,53 +34,44 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://picsum.photos/800/1600');
+    background-image: url('csapat.jpg'); /* ide jön a saját képed */
     background-size: cover;
     background-position: center;
     z-index: -2;
 }
 
-/* Sötét overlay (áttetsző réteg) */
+/* Sötét overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* ← állítható! */
+    background: rgba(0, 0, 0, 0.6);
     z-index: -1;
 }
-@keyframes movePattern {
-    0% { background-position: 0 0; }
-    100% { background-position: 200px 200px; }
-}
 
-/* Logó felül középen, drop-shadow kiemeléssel */
+/* Logó */
 .top-logo {
     width: 130px;
-    margin-top: 18px;
-    margin-bottom: 22px;
-    z-index: 1;
-    position: relative;
-    filter: drop-shadow(0 0 8px #fff); /* fehér fény a pajzs köré */
+    margin: 20px 0;
+    filter: drop-shadow(0 0 8px #fff);
 }
 
+/* Cím */
 h1 {
     font-size: 2em;
     margin-bottom: 30px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    position: relative;
-    z-index: 1;
 }
 
+/* Gombok */
 .button-container {
     width: 90%;
     max-width: 420px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    z-index: 1;
-    position: relative;
 }
 
 .social-button {
@@ -94,25 +84,30 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    position: relative;
-    overflow: hidden;
     transition: transform .25s, box-shadow .25s;
     border: 2px solid #FF6600;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* Platform színek */
-.social-button i { font-size: 26px; }
-.facebook { background-color: rgba(59,89,152,0.9); }
-.instagram { background-color: rgba(225,48,108,0.9); }
-.tiktok { background-color: rgba(105,201,208,0.9); color: #000; }
-.weboldal { background-color: rgba(0,0,0,0.8); }
-
-.social-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 8px 28px rgba(255,255,255,0.4);
+.social-button i {
+    font-size: 26px;
 }
 
+/* Színek */
+.facebook { background-color: #3b5998; }
+.instagram { background-color: #E1306C; }
+.tiktok { background-color: #69C9D0; color: #000; }
+.weboldal { background-color: #000; }
+.phone { background-color: #28a745; }
+.email { background-color: #6c63ff; }
+
+/* Hover */
+.social-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(255,102,0,0.6);
+}
+
+/* Mobil */
 @media (max-width: 400px) {
     .social-button { font-size: 18px; padding: 16px; }
     .social-button i { font-size: 22px; }
@@ -120,36 +115,44 @@ h1 {
 }
 </style>
 </head>
+
 <body>
 
-<div class="bg-left"></div>
-<div class="bg-right"></div>
+<!-- Háttér -->
+<div class="background"></div>
+<div class="overlay"></div>
 
-<!-- Pajzs alakú logó fehér drop-shadow kerettel -->
+<!-- Logó -->
 <img src="szrseatlatszo.png" alt="Szeged Volley logó" class="top-logo">
 
 <h1>Csatlakozz hozzánk!</h1>
 
 <div class="button-container">
+
     <a href="https://www.facebook.com/szegedirse" class="social-button facebook" target="_blank">
         <i class="fab fa-facebook-f"></i> Facebook
     </a>
+
     <a href="https://www.instagram.com/szegedirse" class="social-button instagram" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
     </a>
+
     <a href="https://www.tiktok.com/@szegedirse" class="social-button tiktok" target="_blank">
         <i class="fab fa-tiktok"></i> TikTok
     </a>
+
     <a href="https://www.szegedvolley.com" class="social-button weboldal" target="_blank">
         <i class="fas fa-globe"></i> Weboldal
-        
-    <!-- Új gombok -->
-    <a href="tel:+36201234567" class="social-button" style="background-color: #28a745;">
+    </a>
+
+    <a href="tel:+36201234567" class="social-button phone">
         <i class="fas fa-phone"></i> Hívás
     </a>
-    <a href="mailto:szegedirse@gmail.com" class="social-button" style="background-color: #6c63ff;">
+
+    <a href="mailto:szegedirse@gmail.com" class="social-button email">
         <i class="fas fa-envelope"></i> Email
     </a>
+
 </div>
 
 </body>
