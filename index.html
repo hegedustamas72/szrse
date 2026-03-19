@@ -14,6 +14,8 @@ html, body {
 }
 
 body {
+    <div class="background"></div>
+    <div class="overlay"></div>
     font-family: Arial, sans-serif;
     color: #fff;
     text-align: center;
@@ -26,20 +28,29 @@ body {
     overflow: hidden;
 }
 
-/* Háttér: bal narancs, jobb fekete, sportos textúra */
-.bg-left,
-.bg-right {
+/* Háttér kép */
+.background {
     position: fixed;
     top: 0;
-    width: 50%;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background-image: url('SZRSE csapat.jpg');
+    background-size: cover;
+    background-position: center;
     z-index: -2;
-    background-size: 200% 200%;
-    animation: movePattern 10s linear infinite;
 }
-.bg-left { left: 0; background-color: #FF6600; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px); }
-.bg-right { right: 0; background-color: #000000; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px); }
 
+/* Sötét overlay (áttetsző réteg) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* ← állítható! */
+    z-index: -1;
+}
 @keyframes movePattern {
     0% { background-position: 0 0; }
     100% { background-position: 200px 200px; }
@@ -86,7 +97,7 @@ h1 {
     position: relative;
     overflow: hidden;
     transition: transform .25s, box-shadow .25s;
-    border: 2px solid rgba(255,255,255,0.7);
+    border: 2px solid #FF6600;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
