@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 26.3.1//EN
+N:Berki-Dukai;Ágnes;;;
+FN:Ágnes Berki-Dukai
+ORG:SZRSE Marketing;
+EMAIL;type=INTERNET;type=pref:szrse.marketing@gmail.com
+TEL;type=CELL;type=VOICE;type=pref:+36706790088
+item1.URL;type=pref:www.szegedvolley.com
+item1.X-ABLabel:_$!<HomePage>!$_
+END:VCARD
