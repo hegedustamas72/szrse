@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Szeged Volley Kapcsolatok</title>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
@@ -13,101 +12,91 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-}
-
-body {
     font-family: Arial, sans-serif;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 20px;
     overflow: hidden;
 }
 
-/* Háttér kép */
+/* Háttér */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('csapat.jpg'); /* ide jön a saját képed */
+    background-image: url('zsuzskahatter.jpg'); /* saját kép */
     background-size: cover;
     background-position: center;
+    filter: brightness(1.1);
     z-index: -2;
 }
 
-/* Sötét overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
 /* Logó */
 .top-logo {
-    width: 130px;
-    margin: 20px 0;
-    filter: drop-shadow(0 0 8px #fff);
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 120px;
+    filter: brightness(1.4) drop-shadow(0 0 6px #aaa);
 }
 
-/* Cím */
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-}
-
-/* Gombok */
+/* Gombok konténer */
 .button-container {
     width: 90%;
     max-width: 420px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-top: 20px;
 }
 
+/* Gombok stílus */
 .social-button {
     font-size: 18px;
     padding: 14px;
     border-radius: 14px;
     text-decoration: none;
-    color: #fff;
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition: transform .25s, box-shadow .25s;
-    border: 2px solid #FF6600;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform .25s, box-shadow .25s, filter .25s;
+    border: 1.5px solid rgba(255,255,255,0.6); /* világos szegély */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25); /* emelkedés */
+    font-weight: 600;
+    background-clip: padding-box;
 }
 
 .social-button i {
     font-size: 22px;
 }
 
-/* Színek */
-.facebook { background-color: #3b5998; }
-.instagram { background-color: #E1306C; }
-.tiktok { background-color: #69C9D0; color: #000; }
-.weboldal { background-color: #000; }
-.email { background-color: #6c63ff; }
-.contact { background-color: #ff9900; color: #fff; }
+/* Pasztell színek */
+.facebook { background-color: #a3bffa; }
+.instagram { background-color: #f7a6c1; }
+.tiktok { background-color: #a0e7e5; }
+.weboldal { background-color: #dcdcdc; }
+.email { background-color: #c9c3ff; }
+.contact { background-color: #ffd6a5; }
 
-/* Hover */
+/* Hover effekt */
 .social-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 8px 25px rgba(255,102,0,0.6);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    filter: brightness(1.05);
 }
 
-/* Mobil optimalizálás */
+/* Mobil: két oszlopos elrendezés */
 @media (max-width: 600px) {
     .button-container {
         display: grid;
@@ -123,34 +112,30 @@ h1 {
 
 <body>
 
-<!-- Háttér -->
 <div class="background"></div>
 <div class="overlay"></div>
 
-<!-- Logó -->
-<img src="szrseatlatszo.png" alt="Szeged Volley logó" class="top-logo">
-
-<h1>Csatlakozz hozzánk!</h1>
+<img src="zsuzskalogo.jpg" alt="ZsuzskaArt logó" class="top-logo">
 
 <div class="button-container">
 
-    <a href="https://www.facebook.com/szegedirse" class="social-button facebook" target="_blank">
+    <a href="https://www.facebook.com/zsuzskaart.2025" class="social-button facebook" target="_blank">
         <i class="fab fa-facebook-f"></i> Facebook
     </a>
 
-    <a href="https://www.instagram.com/szegedirse" class="social-button instagram" target="_blank">
+    <a href="https://www.instagram.com/zsuzskaart.grozner.t.zsuzska" class="social-button instagram" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
     </a>
 
-    <a href="https://www.tiktok.com/@szegedirse" class="social-button tiktok" target="_blank">
+    <a href="https://www.tiktok.com/@zsuzska.art" class="social-button tiktok" target="_blank">
         <i class="fab fa-tiktok"></i> TikTok
     </a>
 
-    <a href="https://www.szegedvolley.com" class="social-button weboldal" target="_blank">
+    <a href="https://www.zsuzskaart.hu" class="social-button weboldal" target="_blank">
         <i class="fas fa-globe"></i> Weboldal
     </a>
 
-    <a href="aginevjegy.vcf" class="social-button contact">
+    <a href="zsuzska.vcf" class="social-button contact">
         <i class="fas fa-address-card"></i> Névjegy
     </a>
 
